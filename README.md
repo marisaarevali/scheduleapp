@@ -1,3 +1,6 @@
 # treeningplaan
 
-scedule making app with python and flask
+school project
+schedule making app with python and flask
+css is made from classmates
+
