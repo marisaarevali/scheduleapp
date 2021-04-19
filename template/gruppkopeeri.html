@@ -1,0 +1,38 @@
+
+	{% extends "layout.html" %}
+	{% block title %}
+	Kopeeri grupp
+	{% endblock title %}
+	{% block content %}
+	<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			}
+	</style>
+
+        <div class="container-xl">
+        <form method="POST" action="">
+                        <h2>Kopeeri grupp</h2> <br>
+                        Uue grupi nimi: <input type = "text" name= "nimi" /> <br><br>
+
+
+			Lisa loodavasse gruppi õpilased mõnest vanemast
+			grupist:
+			<br>
+			
+			<label for="grupid">Vali vanem grupp:</label>
+                        <select name="vana_grupp" id="vana_grupp">
+                                <option style="display:none"> - </option>
+                                {% for data in eelnevad_grupid %}
+                        <option value="{{data}}">{{data}}</option>"
+                                {% endfor %}
+                        </select>
+                        <br>
+                        <br>
+                        <input type = "submit" class="btn btn-success" role="button" value="Salvesta grupp">
+                        
+
+        </form>
+</div>
+{% endblock content %}

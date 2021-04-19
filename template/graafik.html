@@ -1,0 +1,51 @@
+
+        {% extends "layout.html" %}
+	    {% block title %}
+        Treeningplaan
+        {% endblock title %}
+      {% block content %}
+      <div class="container-xxl">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1 pb-3 mb-3 border-bottom">
+          <h1 class="h2">Treeningplaan</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group me-2">
+              </div>
+            </div>
+          </div>
+        <a class="btn btn-success" role="button" aria-current="page" href="{{url_for('treening')}}">
+            <span data-feather="home"></span>
+            Lisa uus treening
+          </a>
+        <br><br>
+        {{ p2eva_lingid.decode('utf-8') | safe }}		
+        <div class="table-responsive-xl">
+        <table class="table-bordered table-hover border-primary">
+        <tr>
+
+            <th>Aeg</th>
+            
+        {% for uno_v2ljak in v2ljakud %}
+        
+            <th>{{ uno_v2ljak }}</th>
+
+        {% endfor %}
+        
+        </tr>
+
+      
+        {% for row in el_weekdays_list %}
+            <tr>    
+        
+            {% for time in row %}
+            {{ time | safe }}
+        
+        {% endfor %}
+            </tr>
+        {% endfor %}
+
+
+</table>
+        </div>
+        
+      </div>
+{% endblock content %}

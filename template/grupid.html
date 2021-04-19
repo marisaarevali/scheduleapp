@@ -1,0 +1,32 @@
+
+	{% extends "layout.html" %}
+	{% block title %}
+	Grupid
+	{% endblock title %}
+	{% block content %}
+<div class="container-xl">
+        <form method="POST" action="">
+          
+        <H1>Grupid</H1> <br>
+			
+		<a class="btn btn-success" href="grupilisamine" role="button">Loo uus grupp</a>                    
+
+		<br>
+		<br>
+		<H4>Aktiivse hooaja grupid</H4>
+
+		{% for row in opilased_grupp_list %}
+			
+			<b>{{ row[0] }} </b>
+			<strong><a href="/grupimuudatused/{{ row[0] }}" class="btn btn-outline-primary btn-sm"> Muuda</a></strong>
+			<br>
+
+			{% for name in row[1] %}
+			{{ name }} <br>
+			{% endfor %}
+			<br>
+		{% endfor %}
+
+        </form>
+</div>
+{% endblock content %}

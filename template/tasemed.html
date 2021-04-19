@@ -1,0 +1,75 @@
+
+	{% extends "layout.html" %}
+	{% block title %}
+	Tasemed
+	{% endblock title %}
+	{% block content %}
+	<div class="container-xl">
+	<form method="POST" action="">
+			<h2>Lisa uus tase</h2> <br>
+			<div class="form-group row">		
+			<label class="col-md-2 col-form-label form-control-label">Nimi</label>
+			<div class="col-md-4">
+			<input type ="text" class="form-control" name= "nimi" placeholder="Nt. Kollane pall">
+			</div></div>
+			<div class="form-group row">
+				<label class="col-md-2 col-form-label form-control-label">Treeningu liik 1</label>
+				<div class="col-md-4">
+					<input class="form-control" type="text" placeholder="Nt. Tennis" name= "tyyp1">
+				</div>
+				<label class="col-lg-3 col-form-label form-control-label">Soovituslikud tunnid</label>
+				<div class="col-md-3">
+					<input class="form-control" type="text" placeholder="Sisesta tundide arv" name= "tunnid1">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-md-2 col-form-label form-control-label">Treeningu liik 2</label>
+				<div class="col-md-4">
+					<input class="form-control" type="text" placeholder="Nt. Üldfüüsiline" name= "tyyp2">
+				</div>
+				<label class="col-md-3 col-form-label form-control-label">Soovituslikud tunnid</label>
+				<div class="col-md-3">
+					<input class="form-control" type="text" placeholder="Sisesta tundide arv" name= "tunnid2">
+				</div>
+			</div>
+			<input type= "submit" class="btn btn-success" value="Salvesta tase">	
+	</form>
+	<br>
+
+	<!-- Tasemete nimekiri -->
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">Tasemed</h1>
+		<div class="btn-toolbar mb-2 mb-md-0">
+		  <div class="btn-group me-2">
+		  </div>
+		</div>
+	  </div>
+	<div class="table-responsive">
+		<table class="table table-striped table-sm">			
+		<thead class="thead-dark">
+			<tr>		
+				<th>Nimi</th>
+				<th>Treeningu liik 1</th>
+				<th>Soovituslikud tunnid 1</th>
+				<th>Treeningu liik 2</th>
+				<th>Soovituslikud tunnid 2</th>
+				<th>Staatus</th>
+				<th></th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr>{% for row in tase_list %}
+				<td>{{row[1]}}</td>
+				<td>{{row[2]}}</td>
+				<td>{{row[3]}}</td>
+				<td>{{row[4]}}</td>
+				<td>{{row[5]}}</td>
+				<td>{{row[6]}}</td>
+				<td><a href="/tasememuudatused/{{ row[0] }}" class="btn btn-outline-primary btn-sm" role="button">Muuda</a></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+	</table>
+	</div>
+</div>
+{% endblock content %}

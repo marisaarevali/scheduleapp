@@ -1,0 +1,27 @@
+
+        {% extends "layout.html" %}
+	    {% block title %}
+        Treeningsaali andmed
+        {% endblock title %}
+	    {% block content %}
+        <div class="container-xl">
+        <form action="{{ t_id }}" method="POST">
+                        <h2>Muuda treeningsaali andmeid</h2> <br>
+                        <div class="form-group row">		
+                        <label class="col-md-1 col-form-label form-control-label">Nimi</label>
+                        <div class="col-md-4">
+                        <input type ="text" class="form-control" name= "nimi" value="{{ valjak_data[1] }}">
+                        </div></div>
+                        <div class="form-group row">		
+                            <label class="col-md-1 col-form-label form-control-label">Staatus</label>
+                            <div class="col-md-4">
+                                <select name="staatus" id="staatus" class="form-control">
+                                    <option value="{{ el_staatus[0] }}">{{ el_staatus[0] }}</option>
+                                    <option value="{{ el_staatus[1] }}">{{ el_staatus[1] }}</option>
+                                    </select>
+                            </div></div>
+                        <input type="button" class="btn btn-secondary" value="Mine tagasi" onClick="history.go(-1);">	
+                        <input type= "submit" class="btn btn-success" value="Salvesta muudatused">
+        </form>
+    </div>
+    {% endblock content %}

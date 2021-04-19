@@ -1,0 +1,36 @@
+
+	{% extends "layout.html" %}
+	{% block title %}
+	Grupi loomine
+	{% endblock title %}
+	{% block content %}
+	<div class="container-xl">
+		<H1>Grupi loomine</H1>
+		<br>
+		
+		<form method="POST" action="">
+			<div class="form-group row">	
+			<label class="col-md-1 col-form-label form-control-label">Grupi nimi</label>
+			<div class="col-md-4">
+			<input type ="text" class="form-control" name= "nimi" placeholder="Sisesta grupi nimi">
+			</div></div>
+			<p>Vali õpilased nimekirjast või kopeeri nimekiri varasemast grupist <strong><a href="/gruppkopeeri">siin</a></strong></p>
+			<div class="table-responsive">
+				<table class="table table-bordered table-striped table-sm">	
+			<tr>{% for row in data_opilased %}
+				<td ><input type="checkbox" name="opilased" value="{{row[0]}}"></td>
+				<td><label for="opilased">{{row[1]}}</label></td>
+				
+				
+				<!-- <td ><input type="checkbox" name="opilased" value="{{row[0]}}"></td>
+				<td><label for="{{row[0]}}">{{row[1]}}</label></td> -->
+				</tr>
+				{% endfor %}
+
+				</table>
+				</div>			
+			<input type= "submit" class="btn btn-success" value="Salvesta grupp">	
+	</form>
+    
+</div>
+{% endblock content %}

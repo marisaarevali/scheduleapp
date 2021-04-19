@@ -1,0 +1,121 @@
+
+	{% extends "layout.html" %}
+	{% block title %}
+	Lisa treening
+	{% endblock title %}
+	{% block content %}
+	<div class="container-xl">
+	<form method="POST" action="">
+		<h2>Lisa uus treening</h2> <br>
+			<div class="form-group row">		
+				<label for="nadalapaev" class="col-md-1 col-form-label form-control-label">Nädalapäev</label>
+				<div class="col-md-3">
+					<select name="nadalapaev" id="nadalapaev" class="form-control">
+						<option style="display:none"> - </option>
+						{% for data in el_nadalapaev %}
+						<option value="{{data}}">{{data}}</option>
+						{% endfor %}
+						</select>
+				</div>
+				<label for="v2ljakud" class="col-md-1 col-form-label form-control-label">Treeningsaal</label>
+				<div class="col-md-3">
+					<select name="v2ljakud" id="v2ljakud" class="form-control">
+						<option style="display:none"> - </option>
+						{% for data in v2ljakud %}
+						<option value="{{data}}">{{data}}</option>
+						{% endfor %}
+						</select>
+				</div></div>
+				<div class="form-group row">		
+					<label for="grupid" class="col-md-1 col-form-label form-control-label">Grupp</label>
+					<div class="col-md-3">
+						<select name="grupid" id="grupid" class="form-control">
+							<option style="display:none"> - </option>
+							{% for data in grupid %}
+							<option value="{{data}}">{{data}}</option>
+							{% endfor %}
+							</select>
+					</div>
+					<label for="treenerid" class="col-md-1 col-form-label form-control-label">Treener</label>
+					<div class="col-md-3">
+						<select name="treenerid" id="treenerid" class="form-control">
+							<option style="display:none"> - </option>
+							{% for data in treenerid %}
+							<option value="{{data}}">{{data}}</option>
+							{% endfor %}
+							</select>
+					</div></div>
+				<div class="form-group row">		
+					<label for="alguskell" class="col-md-1 col-form-label form-control-label">Algusaeg</label>
+					<div class="col-md-2">
+						<select name="alguskell" id="alguskell" class="form-control">
+							<option style="display:none"> - </option>
+							{% for data in el_aeg[:-1] %}
+							<option value="{{data}}">{{data}}</option>
+							{% endfor %}
+							</select>
+					</div>
+					<label for="alguskell" class="col-md-1 col-form-label form-control-label">Lõpuaeg</label>
+					<div class="col-md-2">
+						<select name="l6pukell" id="l6pukell" class="form-control">
+							<option style="display:none"> - </option>
+							{% for data in el_aeg[1:] %}
+							<option value="{{data}}">{{data}}</option>
+							{% endfor %}
+							</select>
+					</div></div>
+			<div class="form-group row">		
+				<label for="treeningtyyp" class="col-md-1 col-form-label form-control-label">Treeningtüüp</label>
+				<div class="col-md-2">
+					<select name="treeningtyyp" id="treeningtyyp" class="form-control">
+						<option style="display:none"> - </option>
+						{% for data in treeningtyyp %}
+						<option value="{{data.decode('utf-8') | safe }}">{{data.decode('utf-8') | safe }}</option>
+						{% endfor %}
+						</select>
+				</div>
+			</div>
+			<input type= "submit" class="btn btn-success" value="Salvesta treening">
+			
+	</form> 
+	{% if error %}
+    <p class=error><strong>Viga:</strong> {{ error }}
+  	{% endif %}
+	<br>
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">Treeningud</h1>
+		<div class="btn-toolbar mb-2 mb-md-0">
+		  <div class="btn-group me-2">
+		  </div>
+		</div>
+	  </div>	
+	<div class="table-responsive">
+		<table class="table table-striped table-sm">			
+		<thead class="thead-dark">
+			<tr>			
+				<th>Nädalapäev</th>					
+				<th>Algus</th>
+				<th>Lõpp</th>
+				<th>Treeningsaal</th>
+				<th>Grupp</th>
+				<th>Treener</th>
+				<th>Treeningtüüp</th>	
+				<th> </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>{% for row in trennid_list2 %}				
+			
+			<td>{{row[1]}}</td>
+			<td>{{row[3]}}</td>
+			<td>{{row[4]}}</td>
+			<td>{{row[5]}}</td>
+			<td>{{row[6]}}</td>
+			<td>{{row[7]}}</td>
+			<td>{{row[8]}}</td>
+			<td><a class="btn btn-outline-danger btn-sm" href="/lk2343RRRRhfgdsawret2kfo4ETDDHJJFD2/{{ row[0] }}" onclick="return confirm('Kas oled kindel?')" role="button">Kustuta</a></td></tr>
+			{% endfor %}
+		</tbody>			
+	</table>
+</div>
+{% endblock content %}

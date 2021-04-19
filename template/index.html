@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Spordikooli haldusrakendus</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    
+    <!-- Custom styles for this template -->
+    <link href="static/styles/signin.css" rel="stylesheet">
+    <link href="static/styles/purple.css" rel="stylesheet">
+
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin">
+  <form>
+    <h1 class="h3 mb-3 fw-normal">SPORDIKOOLI HALDUSRAKENDUS</h1><br>
+    <label for="inputEmail" class="visually-hidden">E-maili aadress</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="E-maili aadress"  autofocus>
+    <label for="inputPassword" class="visually-hidden">Parool</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Parool">
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Jäta mind meelde
+      </label>
+    </div>
+    <a class="w-100 btn btn-lg btn-primary" href="{{url_for('graafik')}}">Logi sisse</a>
+    <p class="mt-5 mb-3 text-muted">&copy; Haapsalu kolledž 2021</p>
+  </form>
+</main>
+
+
+    
+  </body>
+</html>
