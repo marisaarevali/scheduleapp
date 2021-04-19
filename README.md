@@ -1,6 +1,12 @@
 # treeningplaan
 
-school project
+school project:
+
 schedule making app with python and flask
-css is made from classmates
+
+inserting pupils, trainers, fields
+
+making schedule
+
+making seasons
 
