@@ -4,7 +4,7 @@ school project:
 
 schedule making app with python and flask
 
-inserting pupils, trainers, fields
+insert, delete, edit - pupils, trainers, fields
 
 making schedule
 
